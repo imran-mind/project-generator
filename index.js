@@ -8,6 +8,7 @@ var zip = require('express-easy-zip');
 
 app.use(express.json());
 app.use(zip());
+
 app.get('/', (req, res) => {
     res.status(200).json('Server is running')
 })
@@ -33,6 +34,7 @@ app.get('/run', async (req, res) => {
             "nodemon": "3.0.2"
         }
     }
+
     const projectPath = `${__dirname}/${projectName}`;
     if (!fsa.existsSync(projectPath)) {
         try {
