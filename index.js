@@ -88,11 +88,11 @@ app.get('/run', async (req, res) => {
 
         } catch (err) {
             console.log('Error --> ', err);
-            res.status(500).json({ message: 'Internal server error' });
+            res.status(500).json({ message: 'Internal server error', err });
         }
     } else {
-        console.log('Else block Error --> ', err);
-        res.status(500).json({ message: 'Internal server error' });
+        console.log('Else block Error --> ');
+        res.status(500).json({ message: 'Oops Internal server error' });
     }
 })
 app.listen(PORT, () => {
